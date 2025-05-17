@@ -1,0 +1,8 @@
+# Ignore environment variable files containing sensitive information
+venv/
+venv/
+env/
+env/
+*/*/env/
+**/env/
+.env

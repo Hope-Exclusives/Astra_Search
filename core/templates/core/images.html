@@ -1,0 +1,21 @@
+<!-- core/templates/core/images.html -->
+{% extends "core/layout.html" %}
+
+
+{% block content %}
+
+    <h5>Image Results for "{{ query }}"</h5>
+    <div class="row">
+        {% for result in results %}
+            <div class="col-md-3 mb-3">
+                <a href="{{ result.image.contextLink }}" target="_blank">
+                    <img src="{{ result.link }}" class="img-fluid rounded shadow-sm" alt="{{ result.title }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    {% if not results %}
+        <p class="text-muted">No results found for "{{ query }}"</p>
+    {% endif %}
+
+{% endblock %}

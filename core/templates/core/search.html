@@ -1,0 +1,49 @@
+
+<!-- core/templates/core/web.html -->
+{% extends "core/layout.html" %}
+
+
+
+  <!-- Optional result counter -->
+  {% if query %}
+    <p class="text-muted">Showing results {{ start_index }} to {{ shown_count }} of {{ total_results }}</p>
+  {% endif %}
+
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="text-center d-none">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+  {% block content %}
+  <!-- Results -->
+    {% for result in results %}
+        <div class="mb-4 border-bottom pb-3">
+        <div class="mb-1 text-muted small d-flex align-items-center">
+            <img src="https://www.google.com/s2/favicons?domain={{ result.link }}" alt="favicon" width="16" class="me-1">
+            <span>{{ result.displayLink }}</span>
+        </div>
+        <h5 class="mb-1">
+            <a href="{{ result.link }}" target="_blank" class="text-decoration-none text-primary">{{ result.title }}</a>
+        </h5>
+        <p class="mb-0 text-secondary" style="font-size: 0.95rem;">
+            {{ result.snippet }}
+        </p>
+        </div>
+    {% empty %}
+        <p class="text-muted">No results found for "{{ query }}"</p>
+    {% endfor %}
+
+
+
+    <!-- JS Spinner trigger -->
+    <script>
+    const form = document.querySelector('form');
+    const spinner = document.getElementById('loading-spinner');
+    form?.addEventListener('submit', () => spinner?.classList.remove('d-none'));
+    </script>
+
+
+{% endblock %}
