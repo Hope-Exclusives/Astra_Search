@@ -11,7 +11,10 @@ CX = settings.PROGRAMMABLE_SEARCH_ENGINE_CX
 
 
 def index(request):
-    return render(request, 'core/index.html')
+    pexels_api_key = settings.PEXELS_API_KEY
+    return render(request, 'core/index.html',{
+        'pexels_api_key': pexels_api_key,
+    })
 
 
 def search_page(request):
