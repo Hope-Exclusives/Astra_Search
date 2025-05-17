@@ -42,7 +42,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'https://astra-soft.onrender.com',  # ✅ Add your Render domain here
+    'astra-soft.onrender.com',  # ✅ Add your Render domain here
 ]
 
 
