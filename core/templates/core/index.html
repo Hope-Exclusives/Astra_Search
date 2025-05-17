@@ -10,7 +10,7 @@
   
 <script>
   const API_KEY = "{{ pexels_api_key }}";
-  const keywords = ["forest", "space", "mountains", "desert", "nature", "animals"];
+  const keywords = ["forest", "space", "mountains", "desert", "ocean"];
 
   // Preload the image and set it as the background
   function preloadAndSetBackground(url) {
@@ -61,6 +61,11 @@
     transition: background-image 1s ease-in-out;
     min-height: 100vh;
     color: white;
+    
+  }
+
+  a{
+    text-decoration: none;
   }
 
     h1 {
@@ -191,7 +196,7 @@
         </div>
         <a class="app-item" href="{% url 'web_portfolio' %}">
           <span class="material-symbols-rounded text-primary">globe</span>
-             Web Dev
+             Web Design
         </a>
 
         <a class="app-item" >
@@ -217,10 +222,10 @@
   </form>
 
   <div class="product-tabs text-center mt-4 gap-2">
-    <a href="#" class="btn btn-outline-light btn-sm mx-1 position-relative">Astra Kilimo <sup class="translate-middle badge border border-light rounded-pill bg-danger p-1 small" style="top: -2; right: -5px; left: auto;">new</sup></a>
-    <a href="#" class="btn btn-outline-light btn-sm mx-1">Astra Scholars</a>
+    <a href="#" class="btn btn-outline-light btn-sm mx-1 position-relative">Astra Kilimo </a><sup class="translate-middle badge border border-light rounded-pill bg-danger p-1 small" style="top: -3; right: -5px; left: auto;">new</sup>
+    <a href="{% url 'scholars' %}" class="btn btn-outline-light btn-sm mx-1">Astra Scholars</a>
     <a href="#" class="btn btn-outline-light btn-sm mx-1">SEO Tools</a>
-    <a href="#" class="btn btn-outline-light btn-sm mx-1">Courses</a>
+    <a href="{% url 'web_portfolio' %}" class="btn btn-outline-light btn-sm mx-1">Web Design</a>
   </div>
 </div>
 
@@ -261,8 +266,8 @@
          <div class="card">
           <img src="{% static 'images/news/astrakilimo.jpg' %}" class="card-img-top" alt="News Image">
           <div class="card-body">
-            <h5 class="card-title">Breaking News Title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Date: October 26, 2023 | Author: John Doe</h6>
+            <h5 class="card-title">Introducing Astra Kilimo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Date: April 26, 2025 | Author: Ishmael Bett</h6>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a href="#" class="btn btn-primary">Read More</a>
           </div>
@@ -274,9 +279,9 @@
          <div class="card">
           <img src="{% static 'images/news/tech.jpg' %}" class="card-img-top" alt="News Image">
           <div class="card-body">
-            <h5 class="card-title">Another Headline Here</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Date: October 25, 2023 | Author: Jane Smith</h6>
-            <p class="card-text">Another example of news content. Cards are great for displaying information in a structured way.</p>
+            <h5 class="card-title">PortfolioReady Launching</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Date: May 25, 2025 | Author: Jane Smith</h6>
+            <p class="card-text">We are thrilled to announce the launch of PortfolioReady, a platform designed to help you create stunning portfolios effortlessly.</p>
             <a href="#" class="btn btn-primary">Read More</a>
           </div>
          </div>
@@ -287,9 +292,9 @@
          <div class="card">
           <img src="{% static 'images/news/meta.jpg' %}" class="card-img-top" alt="News Image">
           <div class="card-body">
-            <h5 class="card-title">Interesting News Story</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Date: October 24, 2023 | Author: David Lee</h6>
-            <p class="card-text">This is a slightly longer card to demonstrate the card's ability to handle more text.</p>
+            <h5 class="card-title">Partnership with Code.org</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Date: April 24, 2025 | Author: David Lee</h6>
+            <p class="card-text">We are excited to announce our partnership with Code.org to promote computer science education.</p>
             <a href="#" class="btn btn-primary">Read More</a>
           </div>
          </div>
