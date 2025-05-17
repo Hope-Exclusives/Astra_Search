@@ -11,7 +11,7 @@
 
 <script>
   const API_KEY = "{{ pexels_api_key }}";
-  const keywords = ["nature", "ai", "space", "future"];
+  const keywords = ["forest", "ai", "space", "future"];
 
   function preloadAndSetBackground(url) {
     const img = new Image();
@@ -170,7 +170,7 @@
 
     <div class="profile-pic d-flex align-items-center justify-content-center">
          <span class="material-symbols-rounded text-white" style="font-size: 40px;" id="toggleMenu">apps</span>
-         <img src="{% static 'images/user-md.png' %}" alt="Profile Picture"  class="img-fluid ms-3 rounded-circle border border-1 border-primary" style="width: 40px; height: 40px;">
+         <img src="{% static 'images/user-normal.jpg' %}" alt="Profile Picture"  class="img-fluid ms-3 rounded-circle border border-1 border-primary bg-light" style="width: 40px; height: 40px;">
     </div>
     <!-- App Launcher -->
     <div class="app-menu" id="appMenu">
