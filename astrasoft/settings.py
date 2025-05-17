@@ -37,7 +37,13 @@ SECRET_KEY = 'django-insecure-bu1efi0+$frv%ml&tbn7(h=xm%g7utgne#tj!4a#n9vuh!=*r4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'astra-soft.onrender.com',  # ✅ Add your Render domain here
+]
 
 
 # Application definition
