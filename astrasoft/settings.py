@@ -22,6 +22,7 @@ load_dotenv()
 PROGRAMMABLE_SEARCH_ENGINE_API_KEY = os.getenv("PROGRAMMABLE_SEARCH_ENGINE_API_KEY")
 PROGRAMMABLE_SEARCH_ENGINE_CX = os.getenv("PROGRAMMABLE_SEARCH_ENGINE_CX")
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
+GOOGLE_GENAI_API_KEY = os.getenv("GOOGLE_GENAI_API_KEY")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
