@@ -8,6 +8,12 @@ from django.conf import settings
 API_KEY = settings.PROGRAMMABLE_SEARCH_ENGINE_API_KEY
 CX = settings.PROGRAMMABLE_SEARCH_ENGINE_CX
 
+
+
+def index(request):
+    return render(request, 'core/index.html')
+
+
 def search_page(request):
     tabs = ['web', 'images', 'videos', 'news', 'maps', 'books', 'shorts', 'finance', 'forums']
     query = request.GET.get('q', '')
@@ -49,5 +55,6 @@ def search_page(request):
         'has_prev': page > 1,
         'total_results': total_results,
     })
+
 
 
