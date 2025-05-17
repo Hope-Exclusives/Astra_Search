@@ -61,3 +61,7 @@ def search_page(request):
 
 
 
+# render web_portfolio.html
+def web_portfolio(request):
+    return render(request, 'core/web_portfolio.html')
+
