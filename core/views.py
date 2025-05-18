@@ -9,7 +9,6 @@ API_KEY = settings.PROGRAMMABLE_SEARCH_ENGINE_API_KEY
 CX = settings.PROGRAMMABLE_SEARCH_ENGINE_CX
 
 
-
 def index(request):
     pexels_api_key = settings.PEXELS_API_KEY
     return render(request, 'core/index.html',{
@@ -91,6 +90,8 @@ def search_images(request):
             results = data.get('items', [])
             total_results = int(data.get('searchInformation', {}).get('totalResults', 0))
 
+  
+
     context = {
         'tabs': tabs,
         'results': results,
@@ -103,4 +104,5 @@ def search_images(request):
         'has_prev': page > 1,
         'total_results': total_results,
     }
+    
     return render(request, 'core/images.html', context)

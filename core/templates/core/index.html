@@ -13,10 +13,11 @@
   const keywords = ["forest", "space", "mountains", "desert", "ocean"];
 
   // Preload the image and set it as the background
-  function preloadAndSetBackground(url) {
+  function preloadAndSetBackground(url, photographer) {
     const img = new Image();
     img.onload = () => {
       document.body.style.backgroundImage = `url('${url}')`;
+      document.getElementById('bg-person').textContent = photographer;
     };
     img.src = url;
   }
@@ -35,7 +36,12 @@
       if (data.photos && data.photos.length > 0) {
         const randomPhoto = data.photos[Math.floor(Math.random() * data.photos.length)];
         const highQualityUrl = randomPhoto.src.large2x || randomPhoto.src.original || randomPhoto.src.landscape;
-        preloadAndSetBackground(highQualityUrl);
+        const photographer = randomPhoto.photographer;
+        // onclick event to open the photographer's profile
+        document.getElementById('bg-person').onclick = () => {
+          window.open(randomPhoto.photographer_url, '_blank');
+        };
+        preloadAndSetBackground(highQualityUrl, photographer);
       }
     } catch (error) {
       console.error("Error fetching background:", error);
@@ -48,10 +54,6 @@
     setInterval(updateBackground, 60000); // update every 60s
   });
 </script>
-
-
-
-  
   <style>
     body {
     background-image: url("{% static 'images/nature.jpg' %}"); /* Local fallback */
@@ -61,7 +63,6 @@
     transition: background-image 1s ease-in-out;
     min-height: 100vh;
     color: white;
-    
   }
 
   a{
@@ -302,6 +303,11 @@
       </div>
      </div>
   </div>
+</div>
+
+
+<div class="position-fixed bottom-0 start-0 ms-3 mb-3">
+   <p>Photo by <span class="text-decoration-underline" style="text-underline-offset: 2px; cursor: pointer;"  id="bg-person"></span></p>
 </div>
 
 
