@@ -130,9 +130,7 @@
 </head>
 <body>
 
-    <div class="container  position-absolute fixed-top mt-4 d-flex justify-content-between align-items-center justify-content-center">
-  
-  
+<div class="container  position-absolute fixed-top mt-4 d-flex justify-content-between align-items-center justify-content-center">
   <div class="right">
 
     <div class="profile-pic d-flex align-items-center justify-content-center">
@@ -173,12 +171,12 @@
 </div>
 
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Own a Website Today</h1>
-        <p class="lead">Want to take your Business Online?</p>
-        <p class="text-muted">You are in the Right place, <a href="" style="color: #a38d75;" class="text-decoration-none">Contact us</a>  today and see your business grow.</p>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Own a Website Today</h1>
+    <p class="lead">Want to take your Business Online?</p>
+    <p class="text-muted">You are in the Right place, <a href="" style="color: #a38d75;" class="text-decoration-none">Contact us</a>  today and see your business grow.</p>
+</section>
 
     <!-- Gallery Section -->
     <section class="gallery-wrapper">
@@ -209,21 +207,21 @@
     </footer>
 
     <!-- JS Script to toggle menu -->
-<script>
-  const toggleMenu = document.getElementById("toggleMenu");
-  const appMenu = document.getElementById("appMenu");
+    <script>
+      const toggleMenu = document.getElementById("toggleMenu");
+      const appMenu = document.getElementById("appMenu");
 
-  toggleMenu.addEventListener("click", () => {
-    appMenu.style.display = appMenu.style.display === "block" ? "none" : "block";
-  });
+      toggleMenu.addEventListener("click", () => {
+        appMenu.style.display = appMenu.style.display === "block" ? "none" : "block";
+      });
 
-  document.addEventListener("click", function (event) {
-    if (!toggleMenu.contains(event.target) && !appMenu.contains(event.target)) {
-      appMenu.style.display = "none";
-    }
-  });
-</script>
+      document.addEventListener("click", function (event) {
+        if (!toggleMenu.contains(event.target) && !appMenu.contains(event.target)) {
+          appMenu.style.display = "none";
+        }
+      });
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
