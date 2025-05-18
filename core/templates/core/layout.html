@@ -12,7 +12,7 @@
 <body>
 <div class="container mt-4">
 
-    <h1 class="mb-4">Astrasoft</h1>
+    <h1 class="mb-4 title" style="cursor: pointer;">Astrasoft</h1>
 
     <form method="get" class="mb-3 d-flex">
         <div class="input-group">
@@ -43,8 +43,7 @@
     </ul>
 
 
-
-      <!-- Optional result counter -->
+    <!-- Optional result counter -->
     {% if query %}
         <p class="text-muted">Showing results {{ start_index }} to {{ shown_count }} of {{ total_results }}</p>
     {% endif %}
@@ -85,5 +84,13 @@ const form = document.querySelector('form');
 const spinner = document.getElementById('loading-spinner');
 form?.addEventListener('submit', () => spinner?.classList.remove('d-none'));
 </script>
+
+<script>
+    let title = document.querySelector('.title');
+    title.addEventListener('click', function() {
+        window.location.href = "{% url 'index' %}";
+    });
+</script>
+
 </body>
 </html>

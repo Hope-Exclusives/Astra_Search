@@ -9,9 +9,11 @@
         {% for result in results %}
             <div class="col-md-3 mb-3">
                 <a href="{{ result.image.contextLink }}" target="_blank">
-                    <img src="{{ result.link }}" class="img-fluid rounded shadow-sm" alt="{{ result.title }}">
+                    <img src="{{ result.link }}" class="img-fluid  shadow-sm" alt="{{ result.title }}">
                 </a>
+                <p class="mt-2 small">{{ result.title|truncatechars:30 }}</p>
             </div>
+            
         {% endfor %}
     </div>
     {% if not results %}
@@ -19,3 +21,5 @@
     {% endif %}
 
 {% endblock %}
+
+

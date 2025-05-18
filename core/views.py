@@ -65,3 +65,42 @@ def search_page(request):
 def web_portfolio(request):
     return render(request, 'core/web_portfolio.html')
 
+
+# search images
+def search_images(request):
+    tabs = ['web', 'images', 'videos', 'news', 'maps', 'books', 'shorts', 'finance', 'forums']
+    query = request.GET.get('q', '')
+    page = int(request.GET.get('page', 1))
+    start_index = (page - 1) * 10 + 1
+
+    results = []
+    total_results = 0
+
+    if query:
+        params = {
+            'key': API_KEY,
+            'cx': CX,
+            'q': query,
+            'searchType': 'image',
+            'start': start_index,
+            'num': 10,
+        }
+        response = requests.get('https://www.googleapis.com/customsearch/v1', params=params)
+        if response.status_code == 200:
+            data = response.json()
+            results = data.get('items', [])
+            total_results = int(data.get('searchInformation', {}).get('totalResults', 0))
+
+    context = {
+        'tabs': tabs,
+        'results': results,
+        'query': query,
+        'type': 'images',
+        'page': page,
+        'start_index': start_index,
+        'shown_count': start_index + len(results) - 1,
+        'has_next': start_index + 10 <= total_results,
+        'has_prev': page > 1,
+        'total_results': total_results,
+    }
+    return render(request, 'core/images.html', context)

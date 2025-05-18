@@ -26,15 +26,15 @@
             <span>{{ result.displayLink }}</span>
         </div>
         <h5 class="mb-1">
-            <a href="{{ result.link }}" target="_blank" class="text-decoration-none text-primary">{{ result.title }}</a>
+            <a href="{{ result.link }}" target="_blank" class="text-decoration-none text-primary" style="font-weight: 350;">{{ result.title }}</a>
         </h5>
         <p class="mb-0 text-secondary" style="font-size: 0.95rem;">
             {{ result.snippet }}
         </p>
         </div>
-    {% empty %}
-        <p class="text-muted">No results found for "{{ query }}"</p>
-    {% endfor %}
+      {% empty %}
+          <p class="text-muted">No results found for "{{ query }}"</p>
+      {% endfor %}
 
 
 
