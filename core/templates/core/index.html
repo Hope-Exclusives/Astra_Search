@@ -35,7 +35,7 @@
       const data = await response.json();
       if (data.photos && data.photos.length > 0) {
         const randomPhoto = data.photos[Math.floor(Math.random() * data.photos.length)];
-        const highQualityUrl = randomPhoto.src.large2x || randomPhoto.src.original || randomPhoto.src.landscape;
+        const highQualityUrl = randomPhoto.src.landscape || randomPhoto.src.large2x || randomPhoto.src.original;
         const photographer = randomPhoto.photographer;
         // onclick event to open the photographer's profile
         document.getElementById('bg-person').onclick = () => {
@@ -51,7 +51,7 @@
   // Delay background update until DOM is ready
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(updateBackground, 1000); // delay for initial fallback visibility
-    setInterval(updateBackground, 60000); // update every 60s
+    setInterval(updateBackground, 60000); // update every 1 minute
   });
 </script>
   <style>

@@ -49,6 +49,14 @@
     {% endif %}
 
 
+    <!-- ai overview -->
+    {% if ai_overview %}
+        <div class="alert alert-info">
+            <strong>  Astra Overview:</strong> <br> {{ ai_overview }}
+        </div>
+    {% endif %}
+
+
     <!-- Results Area -->
     {% block content %}
 
@@ -77,6 +85,18 @@
 </div>
 
 
+<!-- footer -->
+<footer class="text-center mt-4 py-3">
+    <div class="container">
+        <p class="text-muted">&copy; {% now "Y" %} Astra Search. All rights reserved.</p>
+        <p class="text-muted">
+            By using our software you agree with our <a href="#">terms and conditions</a>.
+        </p>
+        <p class="text-muted">
+            For more information, please visit our <a href="#">privacy policy</a>.
+        </p>
+    </div>
+</footer>
 
 <!-- JS Spinner trigger -->
 <script>
