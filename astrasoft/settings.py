@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'scholars',
+    'home',
 ]
 
 # Add static files

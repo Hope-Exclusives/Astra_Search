@@ -1,4 +1,4 @@
-
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,19 +28,19 @@
 <meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/pixel-lite/pixel-lite-preview.jpg">
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
-<link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/img/favicon/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'assets/img/favicon/site.webmanifest' %}">
+<link rel="mask-icon" href="{% static 'assets/img/favicon/safari-pinned-tab.svg' %}" color="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
 <!-- Fontawesome -->
-<link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link type="text/css" href="{% static 'vendor/@fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
 
 <!-- Pixel CSS -->
-<link type="text/css" href="./css/pixel.css" rel="stylesheet">
+<link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet">
 
 
 </head>
@@ -52,15 +52,15 @@
     <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark">
         <div class="container position-relative">
             <a class="navbar-brand me-lg-5" href="./index.html">
-                <img class="navbar-brand-dark" src="./assets/img/brand/logo1.png"  style="filter: invert(2) brightness(100);" alt="Logo light">
-                <img class="navbar-brand-light" src="./assets/img/brand/Logo.png" style="filter: invert(2) brightness(100);" alt="Logo dark">
+                <img class="navbar-brand-dark" src="{% static 'assets/img/brand/logo1.png' %}"  style="filter: invert(2) brightness(100);" alt="Logo light">
+                <img class="navbar-brand-light" src="{% static 'assets/img/brand/Logo.png' %}" style="filter: invert(2) brightness(100);" alt="Logo dark">
             </a>
             <div class="navbar-collapse collapse me-auto" id="navbar_global">
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="./index.html">
-                                <img src="./assets/img/brand/dark.svg" alt="Themesberg logo">
+                                <img src="{% static 'assets/img/brand/dark.svg' %}" alt="Themesberg logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -249,7 +249,7 @@
                             <div class="row g-0">
                                 <div class="col-lg-6 bg-dark d-none d-lg-block me-0 me-3">
                                     <div class="px-0 py-3 text-center">
-                                        <img src="./assets/img/megamenu_image.png" alt="Pixel Components">
+                                        <img src="{% static 'assets/img/megamenu_image.png' %}" alt="Pixel Components">
                                     </div>
                                 </div>
                                 <div class="col ps-0 py-3">
@@ -615,13 +615,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <div class="bootstrap-big-icon d-none d-lg-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="700" height="622" class="d-block my-1"
-                                viewBox="0 0 118 94" role="img">
-                                <title>Bootstrap</title>
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-                                    fill="currentColor"></path>
-                            </svg>
+                            <img src="{% static 'assets/img/brand/logo1.png' %}" width="700" height="622" class="d-block my-1" alt="Logo" style="max-width:100%; height:auto; filter: invert(2) brightness(100);" >
                         </div>
                         <h1 class="fw-bolder display-2">We are The Future</h1>
                         <h2 class="lead fw-normal text-muted mb-4 px-lg-10">We are an AI company focused on developing intelligent applications, automation tools, and scalable systems that empower businesses and organizations to thrive in the digital space.</h2>
@@ -637,7 +631,7 @@
                         </div>
                         <div class="d-flex justify-content-center flex-column mb-6 mb-lg-5">
                             <a href="https://themesberg.com" class="d-block text-center mx-auto" target="_blank">
-                                <img src="./assets/img/themesberg.svg" class="d-block mx-auto mb-3" height="25"
+                                <img src="{% static 'assets/img/themesberg.svg' %}" class="d-block mx-auto mb-3" height="25"
                                     width="25" alt="Themesberg Logo">
                                 <span class="text-muted font-small">Astra Softwares</span>
                             </a>
@@ -653,7 +647,7 @@
         <div class="section py-0">
             <div class="container mt-n10 mt-lg-n12 z-2">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-10"><img src="./assets/img/presentation/hero2.png"
+                    <div class="col-12 col-md-10"><img src="{% static 'assets/img/presentation/hero2.png' %}"
                             alt="Pixel Free Mockup" width="100%"></div>
                 </div>
             </div>
@@ -666,15 +660,15 @@
                         <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle mb-4">
                             <span class="fas fa-puzzle-piece text-tertiary"></span>
                         </div>
-                        <h3 class="fw-bolder">80</h3>
-                        <p class="text-gray">Bootstrap 5 elements</p>
+                        <h3 class="fw-bolder">100+</h3>
+                        <p class="text-gray">Completed Projects</p>
                     </div>
                     <div class="col-6 col-md-3 text-center mb-4">
                         <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle mb-4">
                             <span class="fas fa-pager text-tertiary"></span>
                         </div>
-                        <h3 class="fw-bolder">5</h3>
-                        <p class="text-gray">Example Pages</p>
+                        <h3 class="fw-bolder">20+</h3>
+                        <p class="text-gray">Partners & Member Organizations</p>
                     </div>
                     <div class="col-6 col-md-3 text-center">
                         <div class="icon icon-shape icon-lg bg-white shadow-lg border-light rounded-circle mb-4">
@@ -701,7 +695,7 @@
                             class="btn btn-outline-primary"><span class="fas fa-book me-2"></span> Getting started</a>
                     </div>
                     <div class="col-12 col-lg-6 order-lg-1">
-                        <img src="./assets/img/illustrations/bs5-illustrations.svg" alt="Front pages overview">
+                        <img src="{% static 'assets/img/illustrations/bs5-illustrations.svg' %}" alt="Front pages overview">
                     </div>
                 </div>
                 <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
@@ -719,7 +713,7 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <img src="./assets/img/sections-mockup.jpg" alt="MapBox Leaflet.js Custom Integration Mockup">
+                        <img src="{% static 'assets/img/sections-mockup.jpg' %}" alt="MapBox Leaflet.js Custom Integration Mockup">
                     </div>
                 </div>
                 <div class="row justify-content-between align-items-center">
@@ -735,7 +729,7 @@
                             dashboard</a>
                     </div>
                     <div class="col-12 col-lg-6 order-lg-1">
-                        <img src="./assets/img/presentation-mockup-dashboard.png" alt="Dashboard Preview">
+                        <img src="{% static 'assets/img/presentation-mockup-dashboard.png' %}" alt="Dashboard Preview">
                     </div>
                 </div>
             </div>
@@ -904,7 +898,7 @@
         <div class="row mb-5">
             <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
                 <div class="card shadow">
-                    <img src="./assets/img/blog/image-1.jpg" class="card-img-top rounded-top"
+                    <img src="{% static 'assets/img/blog/image-1.jpg' %}" class="card-img-top rounded-top"
                         alt="Themesberg office">
                     <div class="card-body">
                         <span class="h6 icon-tertiary small"><span class="fas fa-medal me-2"></span>Awards</span>
@@ -918,7 +912,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-7 mb-lg-0">
                 <div class="card border-0 overflow-hidden">
                     <div class="position-relative">
-                        <img src="./assets/img/team/profile-picture-1.jpg" class="card-img-top"
+                        <img src="{% static 'assets/img/team/profile-picture-1.jpg' %}" class="card-img-top"
                             alt="Neil Portrait">
                     </div>
                     <div
@@ -3291,7 +3285,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img class="navbar-brand-dark mb-4" height="35" src="./assets/img/brand/light.svg"
+                <img class="navbar-brand-dark mb-4" height="35" src="{% static 'assets/img/brand/light.svg' %}"
                     alt="Logo light">
                 <p>Pixel is a free and open source Bootstrap 5 UI Kit that will help you prototype and build beautiful website pages and applications.</p>
                 <ul class="social-buttons mb-5 mb-lg-0">
@@ -3367,7 +3361,7 @@
         <div class="row">
             <div class="col mb-md-0">
                 <a href="https://themesberg.com" target="_blank" class="d-flex justify-content-center mb-3">
-                    <img src="./assets/img/themesberg.svg" height="30" class="me-2" alt="Themesberg Logo">
+                    <img src="{% static 'assets/img/themesberg.svg' %}" height="30" class="me-2" alt="Themesberg Logo">
                     <p class="text-white fw-bold footer-logo-text m-0">Themesberg</p>
                 </a>
                 <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
@@ -3380,21 +3374,21 @@
 </footer>
 
     <!-- Core -->
-<script src="./vendor/@popperjs/core/dist/umd/popper.min.js"></script>
-<script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./vendor/headroom.js/dist/headroom.min.js"></script>
+<script src="{% static 'vendor/@popperjs/core/dist/umd/popper.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/headroom.js/dist/headroom.min.js' %}"></script>
 
 <!-- Vendor JS -->
-<script src="./vendor/onscreen/dist/on-screen.umd.min.js"></script>
-<script src="./vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="./vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<script src="./vendor/vivus/dist/vivus.min.js"></script>
-<script src="./vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+<script src="{% static 'vendor/onscreen/dist/on-screen.umd.min.js' %}"></script>
+<script src="{% static 'vendor/jarallax/dist/jarallax.min.js' %}"></script>
+<script src="{% static 'vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js' %}"></script>
+<script src="{% static 'vendor/vivus/dist/vivus.min.js' %}"></script>
+<script src="{% static 'vendor/vanillajs-datepicker/dist/js/datepicker.min.js' %}"></script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <!-- Pixel JS -->
-<script src="./assets/js/pixel.js"></script>
+<script src="{% static 'assets/js/pixel.js' %}"></script>
 
 </body>
 
