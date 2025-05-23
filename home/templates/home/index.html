@@ -51,7 +51,7 @@
 <header class="header-global">
     <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark">
         <div class="container position-relative">
-            <a class="navbar-brand me-lg-5" href="./index.html">
+            <a class="navbar-brand me-lg-5" href="{% url 'home:index' %}">
                 <img class="navbar-brand-dark" src="{% static 'assets/img/brand/logo1.png' %}"  style="filter: invert(2) brightness(100);" alt="Logo light">
                 <img class="navbar-brand-light" src="{% static 'assets/img/brand/Logo.png' %}" style="filter: invert(2) brightness(100);" alt="Logo dark">
             </a>
@@ -59,7 +59,7 @@
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <a href="./index.html">
+                            <a href="{% url 'home:index' %}">
                                 <img src="{% static 'assets/img/brand/dark.svg' %}" alt="Themesberg logo">
                             </a>
                         </div>
@@ -80,10 +80,10 @@
                                     <h6 class="d-block mb-3 text-primary">Main pages</h6>
                                     <ul class="list-style-none mb-4">
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="./html/pages/about.html">About</a>
+                                            <a class="megamenu-link" href="{% url 'home:about' %}">About</a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="./html/pages/contact.html">Contact</a>
+                                            <a class="megamenu-link" href="{% url 'home:contact' %}">Contact</a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
                                             <a class="megamenu-link" href="https://demo.themesberg.com/pixel-pro/v5/html/pages/pricing.html" target="_blank">Pricing <span class="badge bg-tertiary">Pro</span></a>
