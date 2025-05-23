@@ -11,3 +11,15 @@ def about(request):
 
 def contact(request):
     return render(request, 'home/contact.html')
+
+def careers(request):
+    return render(request, 'home/careers.html')
+
+def job_details(request):
+    return render(request, 'home/job_details.html')
+
+def terms(request):
+    return render(request, 'home/terms.html')
+
+def profile(request):
+    return render(request, 'home/profile.html')
