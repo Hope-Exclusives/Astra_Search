@@ -23,3 +23,6 @@ def terms(request):
 
 def profile(request):
     return render(request, 'home/profile.html')
+
+def blog(request):
+    return render(request, 'home/blog.html')

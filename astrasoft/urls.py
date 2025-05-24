@@ -23,3 +23,5 @@ urlpatterns = [
     path('scholars/', include('scholars.urls')),
     path('core/', include('core.urls', namespace='core')),
 ]
+
+
