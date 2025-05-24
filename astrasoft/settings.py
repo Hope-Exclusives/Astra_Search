@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'core',
     'scholars',
     'home',
+    'accounts',
 ]
 
 # Add static files
