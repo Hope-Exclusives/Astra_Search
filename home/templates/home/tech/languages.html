@@ -1,0 +1,76 @@
+{% extends "home/layout.html" %}
+
+
+{% load static %}
+
+
+    {% block content %}
+        <section class="section-header bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 text-center">
+                        <h1 class="display-2 mb-3">Our Tech Stack</h1>
+                        <p>The Languages and Tools Powering Astra Softwares</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-12 col-md-8 text-center ">
+                        <h2 class="display-4 mb-3 text-center">Programming Languages & Frameworks</h2>
+                        <p class="text-center">Explore the core languages powering our solutions.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    {% for img_url in page_obj %}
+                        <div class="col-4 col-sm-2 text-center mb-4">
+                            <img src="{% static img_url %}" alt="{{ img_url|cut:'.svg'|cut:'.png'|cut:'.jpg'|cut:'.jpeg'|cut:'.gif'|title }}" class="img-fluid mb-2" style="height:60px;">
+                            <div>
+                                {{ img_url|cut:'assets/img/logos/'|cut:'.svg'|cut:'.png'|cut:'.jpg'|cut:'.jpeg'|cut:'.gif'|title }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col-12 text-center">
+                            <p>No language logos found.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <nav>
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&laquo;</span>
+                                    </li>
+                                {% endif %}
+                                {% for num in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == num %}
+                                        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&raquo;</span>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}

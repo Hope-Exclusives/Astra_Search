@@ -12,4 +12,7 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('blog/', views.blog, name='blog'),
     path('gallery/', views.gallery, name='gallery'),
+
+    # tech section
+    path('languages/', views.languages, name='languages'),
 ]
