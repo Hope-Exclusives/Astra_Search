@@ -13,3 +13,6 @@ def forgot(request):
 
 def reset(request):
     return render(request, 'accounts/reset.html')
+
+def soon(request):
+    return render(request, 'accounts/soon.html')
