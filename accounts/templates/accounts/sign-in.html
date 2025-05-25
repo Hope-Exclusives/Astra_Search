@@ -39,7 +39,7 @@
                                               Remember me
                                             </label>
                                         </div>
-                                        <div><a href="#" class="small text-right">Lost password?</a></div>
+                                        <div><a href="{% url 'accounts:forgot' %}" class="small text-right">Lost password?</a></div>
                                     </div>
                                 </div>
                                 <div class="d-grid">
@@ -63,7 +63,7 @@
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="fw-normal">
                                     Not registered?
-                                    <a href="./sign-up.html" class="fw-bold text-underline">Create account</a>
+                                    <a href="{% url 'accounts:signup' %}" class="fw-bold text-underline">Create account</a>
                                 </span>
                             </div>
                         </div>

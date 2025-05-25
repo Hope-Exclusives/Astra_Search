@@ -7,3 +7,9 @@ def sign_up(request):
 
 def sign_in(request):
     return render(request, 'accounts/sign-in.html')
+
+def forgot(request):
+    return render(request, 'accounts/forgot.html')
+
+def reset(request):
+    return render(request, 'accounts/reset.html')
