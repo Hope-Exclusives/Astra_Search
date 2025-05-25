@@ -153,31 +153,28 @@
                                     <h6 class="d-block mb-3 text-primary">Tools & Tech</h6>
                                     <ul class="list-style-none mb-4">
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">Version Control</a>
+                                            <a class="megamenu-link" href="{% url 'home:version' %}">Version Control</a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
                                             <a class="megamenu-link" href="{% url 'home:languages' %}">Languages </a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#" target="_blank">Hosting </a>
+                                            <a class="megamenu-link" href="{% url 'home:hosting' %}" target="_blank">Hosting </a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#" target="_blank">Databases </a>
+                                            <a class="megamenu-link" href="{% url 'home:databases' %}" target="_blank">Databases </a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#">UI/UX Design</a>
+                                            <a class="megamenu-link" href="{% url 'home:ui_tools' %}">UI/UX Design</a>
                                         </li>
                                     </ul>
                                     <h6 class="d-block mb-3 text-primary">AI & Quantum</h6>
                                     <ul class="list-style-none mb-4">
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#" target="_blank">Datasets </a>
+                                            <a class="megamenu-link" href="{% url 'home:ai_tools' %}" target="_blank">AI tools </a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#" target="_blank">AI tools </a>
-                                        </li>
-                                        <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="#" target="_blank"> Quantum ML </a>
+                                            <a class="megamenu-link" href="{% url 'home:quantum' %}" target="_blank"> Quantum ML </a>
                                         </li>
                                     </ul>
                                 </div>

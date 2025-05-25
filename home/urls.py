@@ -15,4 +15,10 @@ urlpatterns = [
 
     # tech section
     path('languages/', views.languages, name='languages'),
+    path('hosting/', views.hosting, name='hosting'),
+    path('databases/', views.databases, name='databases'),
+    path('version_control/', views.version, name='version'),
+    path('ui_tools/', views.ui_tools, name='ui_tools'),
+    path('ai_tools/', views.ai_tools, name='ai_tools'),
+    path('quantum/', views.quantum, name='quantum'),
 ]

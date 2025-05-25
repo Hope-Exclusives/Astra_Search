@@ -29,8 +29,10 @@ def profile(request):
 def blog(request):
     return render(request, 'home/blog.html')
 
+
+
 def languages(request):
-    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos')
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'languages')
     
     if not os.path.exists(image_folder):
         image_files = []
@@ -38,12 +40,125 @@ def languages(request):
         image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
     
     # Only relative path from 'static' folder
-    image_urls = [f"assets/img/logos/{img}" for img in image_files]
+    image_urls = [f"assets/img/logos/languages/{img}" for img in image_files]
 
     paginator = Paginator(image_urls, 20)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'home/tech/languages.html', {'page_obj': page_obj})
+
+
+
+
+
+def hosting(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'hosting')
+    
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+    
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/hosting/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/hosting.html', {'page_obj': page_obj})
+
+
+
+def databases(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'databases')
+    
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+    
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/databases/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/databases.html', {'page_obj': page_obj})
+
+
+
+
+
+def version(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'version')
+
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/version/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/version.html', {'page_obj': page_obj})
+
+
+def ui_tools(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'ui-tools')
+    
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+    
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/ui-tools/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/ui-tools.html', {'page_obj': page_obj})
+
+
+
+def ai_tools(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'ai-tools')
+    
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+    
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/ai-tools/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/ai-tools.html', {'page_obj': page_obj})
+
+
+
+def quantum(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'home', 'static', 'assets', 'img', 'logos', 'quantum')
+    
+    if not os.path.exists(image_folder):
+        image_files = []
+    else:
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg'))]
+    
+    # Only relative path from 'static' folder
+    image_urls = [f"assets/img/logos/quantum/{img}" for img in image_files]
+
+    paginator = Paginator(image_urls, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'home/tech/quantum.html', {'page_obj': page_obj})
+
+
 
 
 def gallery(request):
