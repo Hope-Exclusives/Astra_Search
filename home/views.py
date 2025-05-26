@@ -29,6 +29,9 @@ def profile(request):
 def blog(request):
     return render(request, 'home/blog.html')
 
+def blog_single(request):
+    return render(request, 'home/blog-single.html')
+
 
 
 def languages(request):
@@ -46,7 +49,6 @@ def languages(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'home/tech/languages.html', {'page_obj': page_obj})
-
 
 
 
@@ -84,7 +86,6 @@ def databases(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'home/tech/databases.html', {'page_obj': page_obj})
-
 
 
 
