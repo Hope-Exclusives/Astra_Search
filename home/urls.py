@@ -22,4 +22,7 @@ urlpatterns = [
     path('ui_tools/', views.ui_tools, name='ui_tools'),
     path('ai_tools/', views.ai_tools, name='ai_tools'),
     path('quantum/', views.quantum, name='quantum'),
+
+    # contact form
+    path('send-email/', views.send_email_view, name='send_email'),
 ]

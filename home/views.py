@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import os
 from django.conf import settings
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from django.contrib import messages
 
 # Create your views here.
 
@@ -180,3 +182,30 @@ def gallery(request):
     return render(request, 'home/gallery.html', {'page_obj': page_obj})
 
 
+
+
+def send_email_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        subject = f"New Contact Form Message from {name}"
+        full_message = f"Sender: {name}\nEmail: {email}\n\nMessage:\n{message}"
+
+        try:
+            send_mail(
+                subject,
+                full_message,
+                email,  # From email
+                ['kipkoechishmaelbett@gmail.com'],  # Replace with your receiving email
+                fail_silently=False,
+            )
+            messages.success(request, 'Your message was sent successfully!')
+        except Exception as e:
+            print("Error sending email:", e)
+            messages.error(request, 'Something went wrong. Please try again.')
+
+        return redirect(request.META.get('HTTP_REFERER', '/'))
+
+    return redirect('/')

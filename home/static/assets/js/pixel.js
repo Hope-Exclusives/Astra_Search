@@ -12,15 +12,18 @@ d.addEventListener("DOMContentLoaded", function(event) {
         xl: 1140
     };
 
+
+    
     var preloader = d.querySelector('.preloader');
     if (preloader) {
-        setTimeout(function() {
+        window.addEventListener('load', function() {
             preloader.classList.add('fade-out');
-        }, 3000); // 3 seconds delay before fade-out
-        setTimeout(function() {
-            preloader.remove();
-        }, 4000); // 1 second after fade-out to remove
+            setTimeout(function() {
+                preloader.remove();
+            }, 0); // 1 second after fade-out to remove
+        });
     }
+
 
     if (d.querySelector('.headroom')) {
         var headroom = new Headroom(document.querySelector("#navbar-main"), {
@@ -32,6 +35,7 @@ d.addEventListener("DOMContentLoaded", function(event) {
         });
         headroom.init();
     }
+
 
     // dropdowns to show on hover when desktop
     if (d.body.clientWidth > breakpoints.lg) {
