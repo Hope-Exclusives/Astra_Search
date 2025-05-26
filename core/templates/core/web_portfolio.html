@@ -367,6 +367,8 @@
     <!-- Gallery Section -->
 <section class="gallery-wrapper my-5">
     <style>
+      
+
         .gallery-wrapper {
             position: relative;
             overflow: hidden;
@@ -506,21 +508,36 @@
       <a href="https://www.david-hckh.com/"><div class="mockup"><img src="{% static 'images/web/david.png' %}" alt="Design 8"></div></a>
       <a href="https://camera-webgi.vercel.app/"><div class="mockup"><img src="{% static 'images/web/canon.png' %}" alt="Design 9"></div></a>
       <a href="https://abusaid.netlify.app/"><div class="mockup"><img src="{% static 'images/web/abu.png' %}" alt="Design 10"></div></a>
+      <a href="https://fremax.co.ke/"><div class="mockup"><img src="{% static 'images/web/fremax.png' %}" alt="Design 11"></div></a>
+      <a href="https://cleaners-webflow-template.webflow.io/"><div class="mockup"><img src="{% static 'images/web/webflow.png' %}" alt="Design 12"></div></a>
     </div>
 
     <script>
-        // Wait for DOM
+        // Scalable horizontal gallery with chevrons and auto-scroll
         document.addEventListener('DOMContentLoaded', function() {
             const gallery = document.querySelector('.gallery');
             const mockups = gallery.querySelectorAll('.mockup');
-            const visibleCount = Math.floor(gallery.offsetWidth / mockups[0].offsetWidth);
-            const maxIndex = mockups.length - visibleCount;
             let scrollIndex = 0;
             let autoScrollInterval = null;
             let isManual = false;
+            let visibleCount = 1;
+            let maxIndex = 0;
+
+            function updateSizes() {
+                // Calculate how many mockups fit in the visible area
+                const galleryWrapper = document.querySelector('.gallery-wrapper');
+                const mockupWidth = mockups[0].offsetWidth + parseInt(getComputedStyle(mockups[0]).marginLeft || 0) + parseInt(getComputedStyle(mockups[0]).marginRight || 0);
+                visibleCount = Math.max(1, Math.floor(galleryWrapper.offsetWidth / mockupWidth));
+                maxIndex = Math.max(0, mockups.length - visibleCount);
+                // Clamp scrollIndex if needed
+                if (scrollIndex > maxIndex) scrollIndex = maxIndex;
+                updateGallery();
+            }
 
             function updateGallery() {
-                const scrollAmount = scrollIndex * (mockups[0].offsetWidth + 40); // 20px margin
+                // Calculate scroll amount based on mockup width and index
+                const mockupWidth = mockups[0].offsetWidth + parseInt(getComputedStyle(mockups[0]).marginLeft || 0) + parseInt(getComputedStyle(mockups[0]).marginRight || 0);
+                const scrollAmount = scrollIndex * mockupWidth;
                 gallery.style.transform = `translateX(-${scrollAmount}px)`;
             }
 
@@ -543,28 +560,22 @@
                 }, 2500);
             }
 
-            // Resume auto-scroll on mouse leave
-            gallery.addEventListener('mouseleave', () => {
-                isManual = false;
-            });
+            // Pause auto-scroll on mouse enter, resume on leave
+            gallery.addEventListener('mouseenter', () => { isManual = true; });
+            gallery.addEventListener('mouseleave', () => { isManual = false; });
 
-            // Pause auto-scroll on mouse enter
-            gallery.addEventListener('mouseenter', () => {
-                isManual = true;
-            });
+            // Responsive: recalculate on resize
+            window.addEventListener('resize', updateSizes);
 
-            // Start auto-scroll
+            // Initial setup
+            updateSizes();
             startAutoScroll();
 
             // Expose scrollGallery globally for chevrons
             window.scrollGallery = scrollGallery;
         });
     </script>
-</section>
-
-
-
-    <!-- contact form -->
+    </section>  <!-- contact form -->
  <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
             <!-- Contact Card -->
