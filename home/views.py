@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 import os
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.contrib import messages
+from .models import Job  # import your Job model
 
 # Create your views here.
 
@@ -16,11 +17,25 @@ def about(request):
 def contact(request):
     return render(request, 'home/contact.html')
 
-def careers(request):
-    return render(request, 'home/careers.html')
+# Read jobs from the database and render them
 
-def job_details(request):
-    return render(request, 'home/job_details.html')
+def careers(request):
+    jobs = Job.objects.all()
+    return render(request, 'home/careers.html', {'jobs': jobs})
+
+
+def job_details(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+
+    context = {
+        'job': job,
+        'responsibilities': job.responsibilities.split('\n'),
+        'requirements': job.requirements.split('\n'),
+        'benefits': job.benefits.split('\n'),
+    }
+    return render(request, 'home/job_details.html', context)
+
+
 
 def terms(request):
     return render(request, 'home/terms.html')
@@ -209,3 +224,6 @@ def send_email_view(request):
         return redirect(request.META.get('HTTP_REFERER', '/'))
 
     return redirect('/')
+
+
+

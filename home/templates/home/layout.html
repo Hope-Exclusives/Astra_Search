@@ -6,7 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Astra Softwares | Innovative Solutions for the Digital space</title>
+
+{% block title %}
+
+{% endblock %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="title" content="Pixel - Free Bootstrap 5 UI Kit">
 <meta name="author" content="Themesberg">
@@ -113,7 +116,7 @@
                                             <a class="megamenu-link" href="{% url 'home:careers' %}" target="_parent">Careers</a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="{% url 'home:job_details' %}" target="_parent">Career Single</a>
+                                            <a class="megamenu-link" href="{% url 'home:careers' %}" target="_parent">Career Single</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -227,7 +230,7 @@
                                             <a class="megamenu-link" href="{% url 'home:careers' %}" target="_parent">Careers</a>
                                         </li>
                                         <li class="mb-2 megamenu-item">
-                                            <a class="megamenu-link" href="{% url 'home:job_details' %}" target="_parent">Career Single</a>
+                                            <a class="megamenu-link" href="{% url 'home:careers' %}" target="_parent">Career Single</a>
                                         </li>
                                     </ul>
                                     <h6 class="d-block mb-3 text-primary">Legal</h6>

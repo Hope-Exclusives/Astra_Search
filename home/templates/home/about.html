@@ -3,6 +3,9 @@
 
 
 
+        {% block title %}
+        <title>Astra Softwares | About us</title>
+        {% endblock %}
 
 
     {% block content %}
@@ -49,7 +52,7 @@
                             <div class="icon icon-primary mb-4">
                                 <span class="fas fa-user"></span>
                             </div>
-                            <h3 class="h5">Team Members</h3>
+                            <h3 class="h5">Tools & Technologies</h3>
                             <span class="counter display-3 text-gray d-block">500</span>
                         </div>
                         <!-- End of Visit Box -->
@@ -60,7 +63,7 @@
                             <div class="icon icon-primary mb-4">
                                 <span class="fas fa-money-check"></span>
                             </div>
-                            <h3 class="h5">Projects Published</h3>
+                            <h3 class="h5">Projects Completed</h3>
                             <span class="counter display-3 text-gray d-block">2400</span>
                         </div>
                         <!-- End of Call Box -->
@@ -72,7 +75,7 @@
                                 <span class="fas fa-globe-europe"></span>
                             </div>
                             <h3 class="h5">Countries</h3>
-                            <span class="counter display-3 text-gray d-block">80</span>
+                            <span class="counter display-3 text-gray d-block">4+</span>
                         </div>
                         <!-- End of Email Box -->
                     </div>
@@ -99,11 +102,20 @@
                             <div class="timeline timeline-one dark px-3 px-sm-0">
                                 <!-- Timeline Item 1 -->
                                 <div class="timeline-item">
+                                    <h4 class="lead">2025</h4>
                                     <h3 class="h4 mb-4">Introduction to Quantum Machine Learning</h3>
                                     <p>Always pushing the boundaries of innovation, Astra Softwares began exploring Quantum Machine Learning (QML)—the fusion of quantum computing and AI. This emerging interest reflects the company’s drive to stay ahead of the curve and prepare for the next evolution in computing, aiming to incorporate QML concepts into future projects and research initiatives.</p>
                                 </div>
+
+                                <div class="timeline-item">
+                                    <span class="text-gray">2025</span>
+                                    <h3 class="h4 my-2">Partnering With Fremax Graphics</h3>
+                                    <img src="{% static 'assets/img/illustrations/fremax.jpg' %}" class="image-xs my-4" style="height: 4rem;" alt="Fremax Graphics Illutration">
+                                    <p>Through our partnership with Fremax Graphics, clients get a full package — from custom software to professional branding — all in one package.</p>
+                                </div>
                                 <!-- Timeline Item 2 -->
                                 <div class="timeline-item">
+                                    <h4 class="lead">2024</h4>
                                     <h3 class="h4 mb-4">Partnering with Code.org</h3>
                                     <div class="my-3">
                                         <span class="icon icon-sm icon-purple me-2"><span class="fab fa-bootstrap"></span></span>
@@ -119,6 +131,7 @@
                                 </div>
                                 <!-- Timeline Item 3 -->
                                 <div class="timeline-item">
+                                    <h4 class="lead">2023</h4>
                                     <h3 class="h4 mb-4">Portfolio Ready</h3>
                                     <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
                                     <p>Seeing a growing need for practical, hands-on programming education, 
@@ -131,6 +144,7 @@
                                 </div>
                                 <!-- Timeline Item 4 -->
                                 <div class="timeline-item">
+                                    <h4 class="lead">2023</h4>
                                     <h3 class="h4 mb-4">An idea becomes a business</h3>
                                     <p>What began as a bold idea to revolutionize the digital space quickly evolved into a full-fledged business. 
                                         Astra Softwares was founded with a mission to empower businesses and learners through cutting-edge 

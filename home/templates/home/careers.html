@@ -16,6 +16,7 @@
          </div>
       </div>
    </section>
+   
    <section class="section section-lg pt-0">
       <div class="container mt-n8 mt-lg-n10 z-2">
          <div class="row">
@@ -58,79 +59,38 @@
             </div>
          </div>
 
-         <div class="row">
-            <div class="col-12 mb-4">
-               <div class="card bg-white shadow border-gray-300">
-                  <div class="card-body p-4 p-lg-5">
-                     <div class="row">
-                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
-                           <h3 class="mb-3">Backend Engineer</h3>
-                           <p class="text-gray mb-4">Responsible for connecting front-end components with robust server-side logic to ensure seamless functionality, performance, and data flow behind the scenes.</p>
-                           <div class="d-sm-flex">
-                              <a href="./career-single.html"><span class="fas fa-map-marker-alt"></span><span class="h6 text-sm ms-2">Hybrid</span></a>
-                              <div class="ms-sm-4 mt-1 mt-sm-0"><span class="fas fa-user-tie text-secondary"></span><span class="h6 text-sm ms-2">Full Time</span></div>
-                           </div>
+    <div class="row">
+    {% for job in jobs %}
+    <div class="col-12 mb-4">
+        <div class="card bg-white shadow border-gray-300">
+            <div class="card-body p-4 p-lg-5">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0">
+                        <h3 class="mb-3">{{ job.job_title }}</h3>
+                        <p class="text-gray mb-4">{{ job.intro|truncatewords:30 }}</p>
+                        <div class="d-sm-flex">
+                            <a href="#"><span class="fas fa-map-marker-alt"></span><span class="h6 text-sm ms-2">{{ job.location }}</span></a>
+                            <div class="ms-sm-4 mt-1 mt-sm-0">
+                                <span class="fas fa-user-tie text-secondary"></span>
+                                <span class="h6 text-sm ms-2">{{ job.employment_type }}</span>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end"><a href="https://forms.gle/QLBdvB54NUk9cUiP7" class="btn btn-secondary me-3 animate-up-2 m-0">Apply</a> <a href="{% url 'home:job_details' %}" class="btn btn-primary animate-up-2 m-0"><i class="fas fa-clipboard-list me-2"></i>See Details</a></div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end">
+                        <a href="https://forms.gle/QLBdvB54NUk9cUiP7" class="btn btn-secondary me-3 animate-up-2 m-0">Apply</a>
+                        <a href="{% url 'home:job_details' job.id %}" class="btn btn-primary animate-up-2 m-0">
+                            <i class="fas fa-clipboard-list me-2"></i>See Details
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No job listings found.</p>
+    {% endfor %}
+</div>
 
-            <div class="col-12 mb-4">
-               <div class="card bg-white shadow border-gray-300">
-                  <div class="card-body p-4 p-lg-5">
-                     <div class="row">
-                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
-                           <h3 class="mb-3">Account manager</h3>
-                           <p class="text-gray mb-4">Ensure the timely and successful delivery of our solutions according to client needs and objectives.</p>
-                           <div class="d-sm-flex">
-                              <a href="{% url 'home:job_details' %}"><span class="fas fa-map-marker-alt"></span><span class="h6 text-sm ms-2">Nairobi, Kenya</span></a>
-                              <div class="ms-sm-4 mt-1 mt-sm-0"><span class="fas fa-user-tie text-secondary"></span><span class="h6 text-sm ms-2">Part Time</span></div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end"><a href="https://forms.gle/QLBdvB54NUk9cUiP7" class="btn btn-secondary me-3 animate-up-2 m-0">Apply</a> <a href="{% url 'home:job_details' %}" class="btn btn-primary animate-up-2 m-0"><i class="fas fa-clipboard-list me-2"></i>See Details</a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-12 mb-4">
-               <div class="card bg-white shadow border-gray-300">
-                  <div class="card-body p-4 p-lg-5">
-                     <div class="row">
-                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
-                           <h3 class="mb-3">Quantum Computing Specialist</h3>
-                           <p class="text-gray mb-4">Designs, develops, and implements quantum algorithms and systems to solve complex computational problems. Works closely with engineering and research teams to explore quantum advantage, optimize classical-quantum integration, and push the boundaries of next-gen computing technologies.</p>
-                           <div class="d-sm-flex">
-                              <a href="{% url 'home:job_details' %}"><span class="fas fa-map-marker-alt"></span><span class="h6 text-sm ms-2">Hybrid</span></a>
-                              <div class="ms-sm-4 mt-1 mt-sm-0"><span class="fas fa-user-tie text-secondary"></span><span class="h6 text-sm ms-2">Full Time</span></div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end"><a href="https://forms.gle/QLBdvB54NUk9cUiP7" class="btn btn-secondary me-3 animate-up-2 m-0">Apply</a> <a href="{% url 'home:job_details' %}" class="btn btn-primary animate-up-2 m-0"><i class="fas fa-clipboard-list me-2"></i>See Details</a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-12 mb-4">
-               <div class="card bg-white shadow border-gray-300">
-                  <div class="card-body p-4 p-lg-5">
-                     <div class="row">
-                        <div class="col-12 col-md-6 mb-4 mb-lg-0">
-                           <h3 class="mb-3">Data Scientist</h3>
-                           <p class="text-muted mb-4">Transforms raw data into actionable insights by applying statistical analysis, machine learning, and data modeling techniques. Collaborates with cross-functional teams to inform strategic decisions, optimize performance, and uncover patterns that drive innovation and growth.</p>
-                           <div class="d-sm-flex">
-                              <a href="{% url 'home:job_details' %}"><span class="fas fa-map-marker-alt"></span><span class="h6 text-sm ms-2">Hybrid</span></a>
-                              <div class="ms-sm-4 mt-1 mt-sm-0"><span class="fas fa-user-tie text-secondary"></span><span class="h6 text-sm ms-2">Full Time</span></div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-md-end"><a href="https://forms.gle/QLBdvB54NUk9cUiP7" class="btn btn-secondary me-3 animate-up-2 m-0">Apply</a> <a href="{% url 'home:job_details' %}" class="btn btn-primary animate-up-2 m-0"><i class="fas fa-clipboard-list me-2"></i>See Details</a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
       </div>
    </section>
 {% endblock %}
