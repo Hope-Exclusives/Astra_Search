@@ -16,3 +16,6 @@ def reset(request):
 
 def soon(request):
     return render(request, 'accounts/soon.html')
+
+def maintain(request):
+    return render(request, 'accounts/maintainance.html')
